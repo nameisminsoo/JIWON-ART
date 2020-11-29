@@ -1,0 +1,118 @@
+ :root {
+     --text-color: rgb(32, 32, 32);
+     --background-color: white;
+     --accent-color: rgb(95, 95, 95);
+
+ }
+body {
+    margin: 0;
+    font-family: Thasadith;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 8px 12px;
+}
+
+.navbar_logo{
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.navbar_logo i{
+    color: var(--accent-color);
+}
+
+.navbar_menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+.navbar_menu li {
+    padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+    background-color: rgb(209, 209, 209);
+    border-radius: 4px;
+}
+
+.navbar_icons {
+    list-style: none;
+    display: flex;
+    color: black;
+    padding-left: 0;
+}
+.navbar_icons li {
+    padding: 8px 12px;
+}
+
+.navbar_menubtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color:var(--accent-color);
+}
+.intro_img {max-width:1200px;width:100%;margin:0 auto;}
+.intro_img > ul {font-size:0;}
+.intro_img > ul > li {display:inline-block;vertical-align:top;width:33.3%;}
+.intro_img > ul > li > a {display:block;width:auto;text-decoration: none;margin:5px;}
+.intro_img > ul > li > a .screen {position:relative;overflow:hidden;}
+.intro_img > ul > li > a .screen .top {position:absolute;bottom:150%;left:30px;z-index:2;color:#fff;font-size:26px;font-weight:900;transition:all .35s;}
+.intro_img > ul > li > a .screen .bottom {position:absolute;top:150%;left:30px;z-index:2;color:#fff;font-size:12px;transition:all .35s;}
+.intro_img > ul > li > a .screen img {width:100%;}
+.intro_img > ul > li > a h3 {font-size:14px;text-align:center;padding:20px;color:#666;}
+.intro_img > ul > li > a .screen::after {content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:1;opacity:0;transition:all .35s;}
+.intro_img > ul > li > a:hover .top {bottom:52%;}
+.intro_img > ul > li > a:hover .bottom {top:52%;}
+.intro_img > ul > li > a:hover .screen::after {opacity:1;}
+
+.intro_text {
+    text-align: center;
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar_icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar_menubtn {
+        display: block;
+    }
+
+    .navbar_menu.active,
+    .navbar_icons.active {
+        display: flex;
+    }
+}
